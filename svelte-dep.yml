@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svelte-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: svelte
+  template:
+    metadata:
+      labels:
+        app: svelte
+    spec:
+      containers:
+      - name: svelte
+        image: 492554570964.dkr.ecr.ap-northeast-2.amazonaws.com/svelte:1 
+
+        ports:
+        - containerPort: 80
